@@ -1,0 +1,7 @@
+[package]
+name = "ass"
+version = "0.0.1"
+entrypoint = "lib.typ"
+authors = ["Þorvaldur Tumi Baldursson"]
+license = "Unlicense"
+description = "Template for assignments"
