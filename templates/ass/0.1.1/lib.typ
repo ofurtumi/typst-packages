@@ -1,8 +1,8 @@
 #let header(project: "", num: "") = align(center + bottom,text(20pt, [#project #num]))
 
-#let template(project: none, class: "Háskóli Íslands", doc) = {
+#let template(project: none, class: "Háskóli Íslands", writer: "Þorvaldur T. Baldursson", doc) = {
   set document(
-    author: "Þorvaldur T. Baldursson"
+    author: writer
   )
 
   set grid(gutter: 16pt)
@@ -20,7 +20,7 @@
                 columns: (1fr, 3fr, 1fr), 
                 class, 
                 text(20pt, { if n < 2 [#project] }),
-                [Þorvaldur T. Baldursson]
+                writer
               )
             ]
           )
@@ -31,13 +31,12 @@
 
   set raw(theme: "./GruvBox.tmTheme")
 
-  show raw.where(block: true): it => align(center, 
-    block(
-      fill: rgb("#282828"),
-      inset: 16pt,
-      radius: 5pt,
-      text(size: 8pt, fill: rgb("#a2aabc"),it)
-    )
+  show raw.where(block: true): it => block(
+    width: 100%, 
+    fill: rgb("#282828"),
+    inset: 16pt,
+    radius: 5pt,
+    text(size: 8pt, fill: rgb("#a2aabc"),it)
   )
 
   show raw.where(block: false): it => box(
